@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>  
+<html>  
+<head>  
+<title>PhoneGap</title>  
+<script type="text/javascript" charset="utf-8" src="cordova-1.5.0.js"></script>  
+<script type="text/javascript">  
+function onDeviceReady(){  
+    var options = new ContactFindOptions();   
+    options.filter="";  
+    options.multiple=true;   
+    var fields = ["phoneNumbers", "name"];   
+    navigator.contacts.find(fields, onSuccess, onError, options);  
+}   
+function onSuccess(contacts) {  
+    var ul = document.getElementById("contactList");   
+    for(var index=0;index<contacts.length;index++) {  
+        var name = contacts[index].name.formatted;   
+        var phoneNumber = contacts[index].phoneNumbers[0].value;   
+        var li = document.createElement('li');   
+        li.innerHTML = "<a href=\"tel://"+phoneNumber+"\">"+name+"</a>";   
+        ul.appendChild(li);  
+    }  
+};   
+function onError() {  
+    alert('onError!');  
+};  
+function init(){  
+    document.addEventListener("deviceready", onDeviceReady, false);  
+}   
+</script>  
+</head>  
+<body onLoad="init()">  
+    <h1>Hola amigos. Esta es mi agenda actual:</h1>  
+    <ul id="contactList"></ul>  
+</body>  
+</html>
