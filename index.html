@@ -1,22 +1,21 @@
 < html >
   < cabeza >
-    < título > Ejemplo de contacto </ título >
+    < título > Contactos </ título >
 
     < script  type = " text / javascript "  charset = " utf-8 "  src = " cordova.js " > </ script >
     < script  type = " text / javascript "  charset = " utf-8 " >
-    // Espere a que se carguen las bibliotecas de API del dispositivo
-    //
+    
     documento . addEventListener ( " deviceready " , onDeviceReady, false );
     // API de dispositivo están disponibles
-    //
+    
     function  onDeviceReady () {
         // crear
         contacto var =  navegador . contactos . crear ();
-        contacto . displayName  =  " Prueba " ;
-        contacto . apodo  =  " Prueba " ;                 // especifica ambos para admitir todos los dispositivos
+        contacto . displayName  =  " Veronica " ;
+        contacto . apodo  =  " Veronica A " ;                 // especifica ambos para admitir todos los dispositivos
         nombre var =  nuevo  ContactName ();
-        nombrar . givenName  =  " Prueba " ;
-        nombrar . familyName  =  " Programacion " ;
+        nombrar . givenName  =  " Veronica " ;
+        nombrar . familyName  =  " Aguirre " ;
         contacto . nombre  = nombre;
         // guardar
         contacto . guardar (onSaveSuccess, onSaveError);
@@ -28,7 +27,7 @@
         // eliminar
         contacto . eliminar (onRemoveSuccess, onRemoveError);
     }
-    // onSaveSuccess: obtenga una instantánea de los contactos actuales
+    // onSaveSuccess es para obtener los contactos actuales
     //
     función  onSaveSuccess ( contacto ) {
         alerta ( " Guardar éxito " );
