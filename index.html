@@ -12,17 +12,17 @@
     function onDeviceReady() {
         // create
         var contact = navigator.contacts.create();
-        contact.displayName = "Prueba";
-        contact.nickname = "Prueba";                 // specify both to support all devices
+        contact.displayName = "Ejemplo";
+        contact.nickname = "Contactos";                 // specify both to support all devices
         var name = new ContactName();
-        name.givenName = "Prueba";
-        name.familyName = "Programacion";
+        name.givenName = "Veronica";
+        name.familyName = "Contactos";
         contact.name = name;
         // save
         contact.save(onSaveSuccess,onSaveError);
         // clone
         var clone = contact.clone();
-        clone.name.givenName = "John";
+        clone.name.givenName = "Vero";
         console.log("Original contact name = " + contact.name.givenName);
         console.log("Cloned contact name = " + clone.name.givenName);
         // remove
@@ -51,8 +51,8 @@
     </script>
   </head>
   <body>
-    <h1>Example</h1>
-    <p>Find Contacts</p>
+    <h1>Práctica de Contactos</h1>
+    <p>Verónica Aguirre</p>
   </body>
 </html>
     
