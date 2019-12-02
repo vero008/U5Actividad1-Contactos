@@ -1,57 +1,58 @@
-< html >
-  < cabeza >
-    < título > Ejemplo de contacto </ título >
+<html>
+  <head>
+    <title>Contact Example</title>
 
-    < script  type = " text / javascript "  charset = " utf-8 "  src = " cordova.js " > </ script >
-    < script  type = " text / javascript "  charset = " utf-8 " >
-    // Espere a que se carguen las bibliotecas de API del dispositivo
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    // Wait for device API libraries to load
     //
-    documento . addEventListener ( " deviceready " , onDeviceReady, false );
-    // API de dispositivo están disponibles
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // device APIs are available
     //
-    function  onDeviceReady () {
-        // crear
-        contacto var =  navegador . contactos . crear ();
-        contacto . displayName  =  " Prueba " ;
-        contacto . apodo  =  " Prueba " ;                 // especifica ambos para admitir todos los dispositivos
-        nombre var =  nuevo  ContactName ();
-        nombrar . givenName  =  " Prueba " ;
-        nombrar . familyName  =  " Programacion " ;
-        contacto . nombre  = nombre;
-        // guardar
-        contacto . guardar (onSaveSuccess, onSaveError);
-        // clonar
-        var clone =  contacto . clon ();
-        clon . nombrar . givenName  =  " John " ;
-        consola . log ( " Nombre de contacto original = "  +  contacto . nombre . givenName );
-        consola . log ( " Nombre de contacto clonado = "  +  clon . nombre . givenName );
-        // eliminar
-        contacto . eliminar (onRemoveSuccess, onRemoveError);
+    function onDeviceReady() {
+        // create
+        var contact = navigator.contacts.create();
+        contact.displayName = "Prueba";
+        contact.nickname = "Prueba";                 // specify both to support all devices
+        var name = new ContactName();
+        name.givenName = "Prueba";
+        name.familyName = "Programacion";
+        contact.name = name;
+        // save
+        contact.save(onSaveSuccess,onSaveError);
+        // clone
+        var clone = contact.clone();
+        clone.name.givenName = "John";
+        console.log("Original contact name = " + contact.name.givenName);
+        console.log("Cloned contact name = " + clone.name.givenName);
+        // remove
+        contact.remove(onRemoveSuccess,onRemoveError);
     }
-    // onSaveSuccess: obtenga una instantánea de los contactos actuales
+    // onSaveSuccess: Get a snapshot of the current contacts
     //
-    función  onSaveSuccess ( contacto ) {
-        alerta ( " Guardar éxito " );
+    function onSaveSuccess(contact) {
+        alert("Save Success");
     }
-    // onSaveError: no se pudieron obtener los contactos
+    // onSaveError: Failed to get the contacts
     //
-    función  onSaveError ( contactError ) {
-        alerta ( " Error = "  +  contactError . code );
+    function onSaveError(contactError) {
+        alert("Error = " + contactError.code);
     }
-    // onRemoveSuccess: obtenga una instantánea de los contactos actuales
+    // onRemoveSuccess: Get a snapshot of the current contacts
     //
-    función  onRemoveSuccess ( contactos ) {
-        alerta ( " Éxito de eliminación " );
+    function onRemoveSuccess(contacts) {
+        alert("Removal Success");
     }
-    // onRemoveError: no se pudieron obtener los contactos
+    // onRemoveError: Failed to get the contacts
     //
-    función  onRemoveError ( contactError ) {
-        alerta ( " Error = "  +  contactError . code );
+    function onRemoveError(contactError) {
+        alert("Error = " + contactError.code);
     }
-    </ script >
-  </ cabeza >
-  < cuerpo >
-    < h1 > Ejemplo vero </ h1 >
-    < p > Buscar contactos </ p >
-  </ cuerpo >
-</ html >
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>Find Contacts</p>
+  </body>
+</html>
+    
