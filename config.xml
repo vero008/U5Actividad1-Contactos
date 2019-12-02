@@ -1,11 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.camara" version="1.5.0" 
-        xmlns="http://www.w3.org/ns/widgets" 
-        xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.contacto" version="1.5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 <preference name="phonegap-version" value="cli-9.0.0" />
-  <name>Actividad1-Contactos</name>
+  <name>Contactos</name>
   <description>
-      Esta es una App de PhoneGap para contactos
+      Esta es una App de PhoneGapp Contactos
   </description>
   <author email="" href="http://cordova.io">
       Verónica Aguirre Frías
@@ -15,16 +13,9 @@
   <plugin name="cordova-plugin-dialogs"/> 
   <plugin name="cordova-plugin-device"/>
   <plugin name="cordova-plugin-camera"/>
-    <plugin name="cordova-plugin-media-capture"/>
-    <plugin name="cordova-plugin-media"/>
-    <plugin name="cordova-plugin-magnetometer"/>
-    <plugin name="cordova-plugin-device-orientation"/>
-    
+  <plugin name="cordova-plugin-media-capture"/>
   <plugin name="cordova-plugin-device-motion"/>
   <plugin name="cordova-plugin-contacts"/>
-    
-    <plugin name ="cordova-plugin-file"/>
-    
   <access origin="*" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
