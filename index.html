@@ -1,36 +1,29 @@
-<!DOCTYPE HTML>  
-<html>  
-<head>  
-<title>PhoneGap</title>  
-<script type="text/javascript" charset="utf-8" src="cordova-1.5.0.js"></script>  
-<script type="text/javascript">  
-function onDeviceReady(){  
-    var options = new ContactFindOptions();   
-    options.filter="";  
-    options.multiple=true;   
-    var fields = ["phoneNumbers", "name"];   
-    navigator.contacts.find(fields, onSuccess, onError, options);  
-}   
-function onSuccess(contacts) {  
-    var ul = document.getElementById("contactList");   
-    for(var index=0;index<contacts.length;index++) {  
-        var name = contacts[index].name.formatted;   
-        var phoneNumber = contacts[index].phoneNumbers[0].value;   
-        var li = document.createElement('li');   
-        li.innerHTML = "<a href=\"tel://"+phoneNumber+"\">"+name+"</a>";   
-        ul.appendChild(li);  
-    }  
-};   
-function onError() {  
-    alert('onError!');  
-};  
-function init(){  
-    document.addEventListener("deviceready", onDeviceReady, false);  
-}   
-</script>  
-</head>  
-<body onLoad="init()">  
-    <h1>Hola amigos. Esta es mi agenda actual:</h1>  
-    <ul id="contactList"></ul>  
-</body>  
-</html>
+<! DOCTYPE html>
+< html >
+  < cabeza >
+    < título > Ejemplo de contacto </ título >
+    < meta  http-equiv = " Content-type "  content = " text / html; charset = utf-8 " >
+    < meta  name = " viewport "  id = " viewport "  content = " width = device-width, height = device-height, initial-scale = 1.0, maximum-scale = 1.0, escalable por el usuario = no; " />
+    < script  type = " text / javascript "  charset = " utf-8 "  src = " cordova.js " > </ script >
+    < script  type = " text / javascript "  charset = " utf-8 " >
+    documento . addEventListener ( " deviceready " , onDeviceReady, false );
+    function  onDeviceReady () {
+        contacto var =  navegador . contactos . crear ();
+        contacto . displayName  =  " Rey " ;
+        contacto . apodo  =  " Rodríguez " ;                
+        nombre var =  nuevo  ContactName ();
+        nombrar . givenName  =  " Reymundo " ;
+        nombrar . familyName  =  " Rodriguez " ;
+        contacto . nombre  = nombre;
+        contacto . save (onSaveSuccess, onSaveError);}
+    función  onSaveSuccess ( contacto ) {
+        alerta ( " Guardar éxito " );}
+    función  onSaveError ( contactError ) {
+        alerta ( " Error = "  +  contactError . code );}
+    </ script >
+  </ cabeza >
+  < cuerpo >
+    < h1 > Ejemplo </ h1 >
+    < p > Buscar contactos </ p >
+  </ cuerpo >
+</ html >
