@@ -10,19 +10,24 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        // create
+        // Crear un contacto
         var contact = navigator.contacts.create();
+        
+        
         contact.displayName = "Ejemplo";
-        contact.nickname = "Contactos";                 // specify both to support all devices
+        contact.nickname = "Contactos";
+        contact.number ="4881328715";
+        
         var name = new ContactName();
-      var numero = new ConctactNumero();
+        var numero = new ConctactNumero();
         name.givenName = "Veronica";
         name.familyName = "Contactos";
-       // contact.name = name;
-      numero.numberValue ="4881328715";
+        numero.numberValue="4881328715";
         contact.name = name;
-      contact.numberValue =numero;
-        // save
+        contact.numero =numero;
+        
+       
+        // Guardar contacto
         contact.save(onSaveSuccess,onSaveError);
         // clone
         var clone = contact.clone();
