@@ -15,9 +15,12 @@
         contact.displayName = "Ejemplo";
         contact.nickname = "Contactos";                 // specify both to support all devices
         var name = new ContactName();
+      var numero = new ConctactNumero();
         name.givenName = "Veronica";
         name.familyName = "Contactos";
-        contact.name = name;
+       // contact.name = name;
+      numero.numberValue ="4881328715";
+        contact.name = name,numero;
         // save
         contact.save(onSaveSuccess,onSaveError);
         // clone
